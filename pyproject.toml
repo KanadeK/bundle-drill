@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bundle-drill"
+version = "0.1.0"
+description = "Prove ordered Git bundle backups restore in an isolated bare repository"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "KanadeK"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.scripts]
+bundle-drill = "bundle_drill.cli:main"
+
+[project.urls]
+Repository = "https://github.com/KanadeK/bundle-drill"
+Issues = "https://github.com/KanadeK/bundle-drill/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S603", "S607"]
+"src/bundle_drill/*" = ["S603", "S607"]
+"examples/*" = ["S603", "S607"]

@@ -1,0 +1,4 @@
+include CONTRIBUTING.md SECURITY.md VERIFICATION.md
+recursive-include examples *.py *.txt
+recursive-include tests *.py
+recursive-include .github *.yml *.md
